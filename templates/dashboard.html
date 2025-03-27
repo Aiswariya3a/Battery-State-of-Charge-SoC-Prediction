@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prediction Results</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Prediction Results</h1>
+
+      <div class="prediction-card">
+        <h2>State of Charge Prediction</h2>
+        <div class="soc-change">
+          <div class="soc-value previous">
+            <span class="label">Previous SoC</span>
+            <span class="value">{{ "%.2f"|format(previous_soc) }}%</span>
+          </div>
+          <div class="arrow">→</div>
+          <div class="soc-value predicted">
+            <span class="label">Predicted SoC</span>
+            <span class="value">{{ "%.2f"|format(prediction) }}%</span>
+          </div>
+        </div>
+
+        <div class="soc-difference">
+          {% set difference = prediction - previous_soc %}
+          <span class="label">Change:</span>
+          <span
+            class="value {% if difference >= 0 %}positive{% else %}negative{% endif %}"
+          >
+            {{ "%+.2f"|format(difference) }}%
+          </span>
+        </div>
+      </div>
+
+      <h2>Input Parameters from Dataset</h2>
+      <div class="input-params">
+        <table>
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for feature, value in input_data.items() %}
+            <tr>
+              <td>{{ feature }}</td>
+              <td>{{ "%.2f"|format(value) if value is number else value }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Add this near the bottom of dashboard.html -->
+      <div class="new-prediction">
+        <a href="/" class="predict-btn">Run New Analysis</a>
+      </div>
+    </div>
+  </body>
+</html>
