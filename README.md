@@ -1,10 +1,7 @@
-Here’s a **professionally structured and refined** version of your README for the **Battery State of Charge (SoC) Prediction System**:
 
 ---
 
 # **Battery State of Charge (SoC) Prediction System**  
-
-![Dashboard Screenshot](media/image.png) 
 
 ## **Table of Contents**  
 - [Overview](#overview)  
@@ -194,6 +191,6 @@ project/
 ---
 
 ### **📌 Screenshot: Prediction Dashboard**
-![Dashboard Screenshot](image.png)
+![Dashboard Screenshot](media/image.png) 
 
 🚀 *Ready to predict battery SoC dynamically with an interactive dashboard!*
