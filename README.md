@@ -4,7 +4,7 @@ Here’s a **professionally structured and refined** version of your README for 
 
 # **Battery State of Charge (SoC) Prediction System**  
 
-![Dashboard Screenshot](screenshot.png)  
+![Dashboard Screenshot](media/image.png) 
 
 ## **Table of Contents**  
 - [Overview](#overview)  
