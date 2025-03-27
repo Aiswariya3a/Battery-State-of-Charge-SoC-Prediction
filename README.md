@@ -137,12 +137,6 @@ The system utilizes **real-world driving data** from **Kaggle**, specifically:
 
 ## **Usage**  
 
-### **Training Mode**  
-To train the model:  
-```bash
-python model.py --train --epochs 100
-```
-
 ### **Run Flask Web Application**  
 To start the **prediction dashboard**:  
 ```bash
